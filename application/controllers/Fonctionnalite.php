@@ -24,45 +24,61 @@ class Fonctionnalite extends  CI_Controller {
 	}
 
 	
+	
+
 	public function template($page,$data){
 		
 		$data['template'] = $page.'.php';
+		$this->load->helper('assets');
 		$this->load->view('template',$data);
 	}
 	
+	
 
-	public function Insertion(){
+	public function getProduit()
+	{
+
+		$this->load->model('produit');
+		$this->load->model('categorie');
+		$data['liste_categorie'] = $this->categorie->get_All_Categorie();
+		$data['liste_produit'] = $this->produit->get_All_Produit();
+		$this->template('listproduit',$data);
+	}
+
+	public function getCategorie(){
 
 		$this->load->model('categorie');
 		$data['liste_categorie'] = $this->categorie->get_All_Categorie();
-		$this->template('insertion',$data);
+		$this->template('listcategorie',$data);
 	}
+
+	public function Ajouter()
+	{
+		$this->load->model('categorie');
+		$data['liste_categorie'] = $this->categorie->get_All_Categorie();
+		$this->template('ajouter',$data);
+	}
+	public function Modifier($idProduit)
+	{
+		
+		$this->template('modifier',$idProduit);
+	}
+	
+
 
 	public function Inserer_Produit(){
 
 		$this->load->model('produit');
-		$this->load->model('categorie');
 
-		$idCategorie = $this->input->post('categorie');
-		$quantite = $this->input->post('quantite');
+		$idProduit = $this->input->post('idProduit');
 		$code = $this->input->post('code');
 		$prix = $this->input->post('prix');
 		$designation = $this->input->post('designation');
 
-		$this->produit->insert_Produit($idCategorie,$code,$quantite,$prix,$designation);
+		$this->produit->insert_Produit($idProduit,$code,$prix,$designation);
 
-		$data['liste_categorie'] = $this->categorie->get_All_Categorie();
-		$this->template('insertion',$data);
+		$this->getCategorie();
 	}
-
-	public function Manipulation(){
-
-		$this->load->model('categorie');
-		$this->load->model('produit');
-
-		$data['liste_produit'] = $this->produit->get_All_Produit();
-		$this->template('manipulation',$data);
-	}	
 
 	public function Supprimer_Produit($idProduit){
 
@@ -70,18 +86,23 @@ class Fonctionnalite extends  CI_Controller {
 
 		$this->produit->delete_Produit($idProduit);
 
-		$data['liste_produit'] = $this->produit->get_All_Produit();
-		$this->template('manipulation',$data);
+		$this->getCategorie();
 	}
+
+	
+	
 
 	public function Modifier_Produit($idProduit){
 
 		$this->load->model('produit');
+		$code = $this->input->post('code');
+		$prix = $this->input->post('prix');
+		$designation = $this->input->post('designation');
 
-		$this->produit->modifier_Produit($idProduit);
+		$this->produit->modifier_Produit($idProduit,$designation,$code,$prix);
 
 		$data['liste_produit'] = $this->produit->get_All_Produit();
-		$this->template('modifier',$data);
+		$this->getCategorie();
 	}
 
 	public function Rechercher(){
