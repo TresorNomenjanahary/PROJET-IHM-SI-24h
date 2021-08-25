@@ -20,61 +20,57 @@ class Load extends Base_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+
 	}
 
-	public function index(){
-		$this->load->helper('assets');
-		$data['template'] = 'index.html';
-		$this->load->view('template_accueil',$data);
-		
-	}
-
-	public function ValidationLogin(){
+	/*public function Test_Login(){
 		$this->load->helper('assets');
 
-		$email = $this->input->post('loginAdmin');
-		$mdp = $this->input->post('mdpAdmin');
+		$email = $this->input->post('email');
+		$mdp = $this->input->post('mdp');
 
-		if($mdp =='' || $email =='' ){
-			$data['template'] = 'accueilAdmin.php';
+		if(){
+			$data['template'] = 'accueil.php';
 			$this->load->view('template',$data);
 		}else{
-			$data['template'] = 'loginAdmin.php';
+			$data['template'] = 'login.php';
 			$this->load->view('template',$data);
 		}
-	}
-
+	}*/
 	public function template($page,$data){
 		
 		$data['template'] = $page.'.php';
 		$this->load->view('template',$data);
 	}
+	public function Saisie(){
 
-	public function SaisieCaisse(){
-
-		$this->load->model('Produit');
-		$this->load->model('Achat');
+		$this->load->model('produit');
+		$this->load->model('achat');
 		$caisse = $this->session->userdata('caisse');
 		$data['caisse'] = $caisse;
-		$data['liste_Produit'] = $this->Produit->get_All_Produit();
-		$data['liste_Achat'] = $this->Achat->getAchat($caisse);
-		$this->template('SaisieCaisse',$data);
+		$data['liste_produit'] = $this->produit->get_All_Produit();
+		$data['liste_achat'] = $this->achat->getAchat($caisse);
+		$this->template('saisie',$data);
 	}
+	
+	public function Valider_Commande(){
 
-	public function ValidationCommande(){
+		$this->load->model('achat');
+		$this->load->model('produit');
 
-		$this->load->model('Achat');
-		$this->load->model('Produit');
-
-		$idProduit = $this->input->post('Produit');
+		$idProduit = $this->input->post('produit');
 		$quantite = $this->input->post('quantite');
 		$caisse = $this->session->userdata('caisse');
 
 		$this->achat->insert_Achat($caisse,$idProduit,$quantite);
 
 		$data['caisse'] = $caisse;
-		$data['liste_Produit'] = $this->produit->get_All_Produit();
-		$data['liste_Achat'] = $this->achat->getAchat($caisse);
+		$data['liste_produit'] = $this->produit->get_All_Produit();
+		$data['liste_achat'] = $this->achat->getAchat($caisse);
 		$this->template('saisie',$data);
+	}
+	public function Changer_Caisse(){
+		$this->session->sess_destroy();
+		redirect(site_url());
 	}
 }
