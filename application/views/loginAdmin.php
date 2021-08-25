@@ -1,31 +1,94 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/jquery.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login Admin</title>
+
+    <link rel="shortcut icon" href="../../assets/images/fav.jpg">
+    <link rel="stylesheet" href="../../assets/css2/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css2/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css2/style.css" />
 </head>
 
 <body>
-    <div class="container-box">
-        <div class="row">
-            <div class="alert alert-danger" role="alert"></div>
-            <div class="form-group">
-                <form action="Load/ValidationLogin" method="post">
-                    <input type="text" name="loginAdmin" id="loginAdmin" placeholder="Saisir le login" required="" autofocus="">
-                    <input type="text" name="mdpAdmin" id="mdpAdmin" placeholder="Saisir le mot de passe" required="">
-                    <input type="submit" id="ValidConnex" value="Connexion">
-                   
-                </form>
-            </div>
+    <div class="container-fluid ">
+        <div class="container ">
+            <div class="row cdvfdfd">
+                <div class="col-lg-10 col-md-12 login-box">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 log-det">
+                            <div class="small-logo">
+                                <i class="fab fa-asymmetrik"></i> Login Admin
+                            </div>
+                            <p class="dfmn">Connectez-vous pour suivre les statistiques du marché</p>
+                            <form action="Load/ValidationLogin" method="post">
+                                <div class="text-box-cont">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="loginAdmin" id="loginAdmin" placeholder="Saisir le login" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                                        </div>
+                                        <input type="password" class="form-control" name="mdpAdmin" id="mdpAdmin" placeholder="Saisir le mot de passe" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group center">
+                                        <button class="btn btn-danger btn-round">Connexion</button>
+                                    </div>
 
+                                    <div class="row">
+                                        <p class="small-info">Connectez-vous via les réseaux sociaux:</p>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="row">
+                                <ul>
+                                    <li>
+                                        <a href="www.facebook.com"><i class="fab fa-facebook-f"></a></i>
+                                    </li>
+                                    <li>
+                                        <a href="www.twitter.com"><i class="fab fa-twitter"></a></i>
+                                    </li>
+                                    <li>
+                                        <a href="www.linkedin.com"></a><i class="fab fa-linkedin-in"></a></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 box-de">
+                            <div class="inn-cover">
+                                <div class="ditk-inf">
+                                    <div class="small-logo">
+                                        <i class="fab fa-asymmetrik"></i> Client
+                                    </div>
+                                    <h2 class="w-100">Voulez-vous faire du shopping ?</h2>
+                                    <p> C'est simple, il suffit de cliquer le bouton Connexion</p>
+                                    <a href="index.php">
+                                        <button type="button" class="btn btn-outline-light">Connexion</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
+<script src="../../assets/js2/jquery-3.2.1.min.js"></script>
+<script src="../../assets/js2/popper.min.js"></script>
+<script src="../../assets/js2/bootstrap.min.js"></script>
+<script src="../../assets/js2/script.js"></script>
+
 
 </html>
