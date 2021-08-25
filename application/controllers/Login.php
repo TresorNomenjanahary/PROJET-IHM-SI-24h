@@ -1,6 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-require_once('Base_Controller.php');
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login extends CI_Controller {
     function __construct()
@@ -18,10 +17,10 @@ class Login extends CI_Controller {
     public function validationLogin(){
         $data['loginUser']=htmlspecialchars($_POST['loginAdmin']);
         $date['password']=htmlspecialchars($_POST['mdpAdmin']);
-        $res=$this->data_model->islogin($data);
+        $res=$this->data_model->estLoger($data);
         if($res){
             $this->session->set_userdata('id'.$data['loginUser']);
-            echo base_url()."/";
+            echo base_url()."TabDeBord/";
         }else{
             echo 0;
         }

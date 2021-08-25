@@ -24,8 +24,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('templateFront',$data);
 	}		
 
-	public function debut(){
+	public function startPage(){
 		$this->load->helper('index_helper');
-		$this->load->view('accueil');
+		$this->load->view('loginAdmin');
 	}
 }
