@@ -15,15 +15,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo css_loader('bootstrap.min.css');?>">
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo css_loader('style.css');?>">
     <!-- Responsive-->
-    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="<?php echo css_loader('responsive.css');?>">
     <!-- fevicon -->
-    <link rel="icon" href="../../assets/images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="<?php echo img_loader('fevicon.png');?>" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="<?php echo css_loader('jquery.mCustomScrollbar.min.css');?>">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <!-- fonts -->
@@ -33,8 +33,8 @@
     <!--  -->
     <!-- owl stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
-    <link rel="stylesoeet" href="../../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo css_loader('owl.carousel.min.css');?>">
+    <link rel="stylesoeet" href="<?php echo css_loader('owl.theme.default.min.css');?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
 
@@ -64,7 +64,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="logo">
-                            <a href="index.html"><img src="../../assets/images/logo.png"></a>
+                            <a href="index.html"><img src="<?php echo img_loader('logo.png');?>"></a>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                         <a href="Boissons.html">Boissons</a>
                         <a href="Legumes.html">Légumes</a>
                     </div>
-                    <span class="toggle_icon" onclick="openNav()"><img src="../../assets/images/toggle-icon.png"></span>
+                    <span class="toggle_icon" onclick="openNav()"><img src="<?php echo img_loader('toggle-icon.png');?>"></span>
 
                     <div class="main">
                         <!-- Another variation with a button -->
@@ -553,7 +553,7 @@
     <div class="footer_section layout_padding">
         <div class="container">
             <div class="footer_logo">
-                <a href="index.html"><img src="../../assets/images/footer-logo.png"></a>
+                <a href="index.html"><img src="<?php echo img_loader('footer-logo.png');?>"></a>
             </div>
             <div class="input_bt">
                 <br>
@@ -577,14 +577,14 @@
     </div>
     <!-- copyright section end -->
     <!-- Javascript files-->
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/jquery-3.0.0.min.js"></script>
-    <script src="../../assets/js/plugin.js"></script>
+    <script src="<?php echo js_loader('jquery.min.js');?>"></script>
+    <script src="<?php echo js_loader('popper.min.js');?>"></script>
+    <script src="<?php echo js_loader('bootstrap.bundle.min.js');?>"></script>
+    <script src="<?php echo js_loader('jquery-3.0.0.min.js');?>"></script>
+    <script src="<?php echo js_loader('plugin.js');?>"></script>
     <!-- sidebar -->
-    <script src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="../../assets/js/custom.js"></script>
+    <script src="<?php echo js_loader('jquery.mCustomScrollbar.concat.min.js');?>"></script>
+    <script src="<?php echo js_loader('custom.js');?>"></script>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";

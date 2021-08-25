@@ -15,13 +15,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../../assets/'bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo css_loader('bootstrap.min.css');?>">
     <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="../../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo css_loader('style.css');?>">
     <!-- Responsive-->
-    <link rel="stylesheet" href="../../assets/responsive.css">
+    <link rel="stylesheet" href="<?php echo css_loader('responsive.css');?>">
     <!-- fevicon -->
-    <link rel="icon" href="../../assets/images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="<?php echo img_loader('fevicon.png');?>" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="../../assets/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
@@ -85,7 +85,7 @@
                         <a href="Boissons.html ">Boissons</a>
                         <a href="Legumes.html ">Légumes</a>
                     </div>
-                    <span class="toggle_icon " onclick="openNav() "><img src="../../assets/images/toggle-icon.png "></span>
+                    <span class="toggle_icon " onclick="openNav() "><img src="<?php echo img_loader('toggle-icon.png');?>"></span>
 
                     <div class="dropdown-menu " aria-labelledby="dropdownMenuButton ">
                         <a class="dropdown-item " href="# ">Action</a>

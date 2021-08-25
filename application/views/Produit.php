@@ -10,7 +10,7 @@
                             <div class="box_main">
                                 <h4 class="shirt_text"><?php echo $Produit1[$i]['designation'];?></h4>
                                 <p class="price_text">Prix <span style="color: #262626;"><?php echo $Produit1[$i]['prixUnitaire'];?></span></p>
-                                <div class="tshirt_img"><img src="../../assets/images/<?php echo $Produit1[$i]['image'];?>"></div>
+                                <div class="tshirt_img"><img src="<?php echo img_loader('<?php echo $Produit1[$i]['image'];?>');?>"></div>
                                 <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Acheter</a></div>
                                 </div>
@@ -42,7 +42,7 @@
                                     <div class="box_main">
                                         <h4 class="shirt_text"><?php echo $Produit2[$i]['designation'];?></h4>
                                         <p class="price_text">Prix <span style="color: #262626;"><?php echo $Produit2[$i]['prixUnitaire'];?></span></p>
-                                        <div class="electronic_img"><img src="../../assets/images/<?php echo $Produit2[$i]['image'];?>"></div>
+                                        <div class="electronic_img"><img src="<?php echo img_loader('<?php echo $Produit2[$i]['image'] ;?>');?>"></div>
                                         <div class="btn_main">
                                             <div class="buy_bt"><a href="#">Acheter</a></div>
                                         </div>

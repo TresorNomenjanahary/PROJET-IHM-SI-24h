@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login Admin</title>
 
-    <link rel="shortcut icon" href="../../assets/images/fav.jpg">
-    <link rel="stylesheet" href="../../assets/css2/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css2/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/css2/style.css" />
+    <link rel="shortcut icon" href="<?php echo img_loader('fav.jpg');?>">
+    <link rel="stylesheet" href="<?php echo css_loader('bootstrap.min');?>">
+    <link rel="stylesheet" href="<?php echo css_loader('fontawsom-all.min');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo css_loader('style');?>" />
 </head>
 
 <body>
@@ -88,10 +88,10 @@
     </div>
 </body>
 
-<script src="../../assets/js2/jquery-3.2.1.min.js"></script>
-<script src="../../assets/js2/popper.min.js"></script>
-<script src="../../assets/js2/bootstrap.min.js"></script>
-<script src="../../assets/js2/script.js">
+<script src="<?php echo js_loader('jquery-3.2.1.min');?>"></script>
+<script src="<?php echo js_loader('popper.min');?>"></script>
+<script src="<?php echo js_loader('bootstrap.min');?>"></script>
+<script src="<?php echo js_loader('script');?>">
 $(document).ready(function(){
     $("#submit").click(function(){
         var user=$("#loginAdmin").val();
