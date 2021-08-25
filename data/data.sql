@@ -66,3 +66,24 @@ create table Vente(
     foreign key (idAchat) references Achat(idAchat),
     foreign key(idClient) references Client (idClient)
 );
+
+INSERT INTO Categorie(idCategorie,designation) VALUES (1,'Divers');
+INSERT INTO Categorie(idCategorie,designation) VALUES (2,'Boissons'); 
+INSERT INTO Categorie(idCategorie,designation) VALUES (3,'Legumes');
+
+INSERT INTO Produit(idProduit,idCategorie,codeProduit,prixUnitaire,designation,image) VALUES 
+(null,3,010,200,'ail','ail.jpg'),
+(null,1,012,800,'Kit règles','divers01.jpg'),
+(null,1,013,600,'Colle UHU','divers02.png'),
+(null,1,014,2400,'Cahier Oxford','divers03.png'),
+(null,1,015,1000,'Stylo 4','divers04.png'),
+(null,1,016,81000,'Cartable Eastpak','divers05.png'),
+(null,2,020,800,'Eau vive','eau01.jpg'),
+(null,2,021,3400,'Ceres Mangue','jus01.jpg'),
+(null,2,022,3000,'Fanta Orange','jus02.jpg'),
+(null,2,024,19900,'Dzama Rhum','jus03.jpg'),
+(null,2,025,12000,'Namaqua','jus04.jpg'),
+(null,3,030,700,'Oignon','oignon.jpg'),
+(null,3,031,800,'Patate','patate.jpg'),
+(null,3,032,720,'Poivron','poivron.jpg'),
+(null,3,033,600,'Tomate','tomate.jpg');
