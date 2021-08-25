@@ -24,7 +24,7 @@ class Load extends Base_Controller {
 
 	public function index(){
 		$this->load->helper('assets');
-		$data['template'] = 'accueil.php';
+		$data['template'] = 'index.html';
 		$this->load->view('template_accueil',$data);
 		
 	}
