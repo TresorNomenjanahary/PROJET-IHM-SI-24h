@@ -5,12 +5,14 @@ class Login extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('assets_helper');
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->model('data_model');
     }
 
     public function index(){
+        $this->load->helper('assets_helper');
         $this->load->view('loginAdmin');
     }
 

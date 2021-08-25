@@ -29,36 +29,9 @@ class Load extends Base_Controller {
 		
 	}
 
-	public function ValidationLogin(){
-		$this->load->helper('assets');
-
-		$email = $this->input->post('loginAdmin');
-		$mdp = $this->input->post('mdpAdmin');
-
-		if($mdp =='' || $email =='' ){
-			$data['template'] = 'accueilAdmin.php';
-			$this->load->view('template',$data);
-		}else{
-			$data['template'] = 'loginAdmin.php';
-			$this->load->view('template',$data);
-		}
-	}
-
 	public function template($page,$data){
 		
 		$data['templateFront'] = $page.'.php';
-		$this->load->view('template',$data);
-	}
-
-	public function template2($page,$data){
-		
-		$data['templateFront2'] = $page.'.php';
-		$this->load->view('template',$data);
-	}
-
-	public function template3($page,$data){
-		
-		$data['templateFront3'] = $page.'.php';
 		$this->load->view('template',$data);
 	}
 
@@ -110,6 +83,14 @@ class Load extends Base_Controller {
 
 	public function get_ProduitIndex3(){
 		$this->load->model('Produit');
+		$data['Produit3'] = $this->Produit->getProduitLegume();
+		$this->template('Produit',$data);
+	}
+
+	public function get3Product(){
+		$this->load->model('Produit');
+		$data['Produit1'] = $this->Produit->getProduitdivers();
+		$data['Produit2'] = $this->Produit->getProduitBoisson();
 		$data['Produit3'] = $this->Produit->getProduitLegume();
 		$this->template('Produit',$data);
 	}
