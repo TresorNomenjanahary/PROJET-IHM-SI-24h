@@ -13,7 +13,7 @@ class Produit extends CI_Model{
 		return $produit;
 	}
 
-	public function insert_Produit($idCategorie,$codeProduit$prixUnitaire,$designation){
+	public function insert_Produit($idCategorie,$codeProduit,$prixUnitaire,$designation){
 		$sql = "INSERT INTO Produit VALUES (null,%s,%s,%s,%s,%s)";
 		$sql = sprintf($sql,$this->db->escape($idCategorie),$this->db->escape($codeProduit),$this->db->escape($prixUnitaire),$this->db->escape($designation));
 		$this->db->query($sql);
