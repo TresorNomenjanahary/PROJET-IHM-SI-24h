@@ -9,7 +9,7 @@ create table Produit(
     idProduit int not null auto_increment,
     idCategorie int not null,
     codeProduit integer,
-    prixUnitaire number,
+    prixUnitaire double,
     designation char(20),
     primary key(idProduit),
     foreign key(idCategorie) references Categorie(idCategorie)
@@ -18,9 +18,9 @@ create table Produit(
 create table Stock(
     idStock int not null auto_increment,
     idProduit int not null,
-    quantite int,
-    primary key(id_stock),
-    foreign key(idProduit) references Produit(idProduit)
+    quantite integer,
+    primary key(idStock),
+    foreign key (idProduit) references Produit(idProduit)
 );
 
 create table Caisse(
@@ -39,6 +39,19 @@ create table Achat(
     foreign key (idStock) references Stock(idStock)
 );
 
+create table Client(
+    idClient int not null auto_increment,
+    nom char(30),
+    primary key(idClient)
+);
 
+create table Vente(
+    idVente int not null auto_increment,
+    idAchat int not null,
+    idClient int not null,
+    primary key(idVente),
+    foreign key (idAchat) references Achat(idAchat),
+    foreign key(idClient) references Client (idClient)
+);
 
 /*supermarche*/
