@@ -13,28 +13,32 @@ class Produit extends CI_Model{
 		return $produit;
 	}
 
-	public function insert_Produit($idCategorie,$codeProduit,$quantite,$prixUnitaire,$designation){
-		$sql = "INSERT INTO Produit VALUES (null,%s,%s,%s,%s,%s)";
-		$sql = sprintf($sql,$this->db->escape($idCategorie),$this->db->escape($codeProduit),$this->db->escape($quantite),$this->db->escape($prixUnitaire),$this->db->escape($designation));
-		$this->db->query($sql);
+	public function getProduitLegume(){
+
+		$sql = 'SELECT * FROM Produit WHERE idCategorie=3';
+		$query = $this->db->query($sql);
+		$produit = array();
+		foreach ($query->result_array() as $key) {
+			$produit[] = $key;
+		}
+		return $produit;
 	}
 
-	public function delete_Produit($idProduit){
-		$sql = "DELETE * from Produit where idProduit = %s";
-		$sql = sprintf($sql,$this->db->escape($idProduit));
-		$this->db->query($sql);
+	public function getProduitdivers(){
+
+		$sql = 'SELECT * FROM Produit WHERE idCategorie=1';
+		$query = $this->db->query($sql);
+		$produit = array();
+		foreach ($query->result_array() as $key) {
+			$produit[] = $key;
+		}
+		return $produit;
 	}
 
-	public function modifier_Produit($idProduit,$designation,$prixUnitaire,$quantite){
-		$sql = "UPDATE Produit SET designation= %s , prixUnitaire = %s , quantite = %s where idProduit = %s";
-		$sql = sprintf($sql,$this->db->escape($designation),$this->db->escape($prixUnitaire),$this->db->escape($quantite),$this->db->escape($idProduit));
-		$this->db->query($sql);
-	}
+	public function getProduitBoisson(){
 
-	public function recherche_Produit($produit){
-		
-		$sql = 'SELECT * FROM Produit where designation like " % %s %" ';
-		$query = $this->db->query($sql,$this->db->escape($produit));
+		$sql = 'SELECT * FROM Produit WHERE idCategorie=2';
+		$query = $this->db->query($sql);
 		$produit = array();
 		foreach ($query->result_array() as $key) {
 			$produit[] = $key;
