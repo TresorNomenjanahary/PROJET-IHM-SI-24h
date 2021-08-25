@@ -15,6 +15,9 @@
 <body>
     <div class="container-fluid ">
         <div class="container ">
+        <div class="alert alert-danger" role="alert" id='err'>
+            <div id="teny"></div>
+        </div>
             <div class="row cdvfdfd">
                 <div class="col-lg-10 col-md-12 login-box">
                     <div class="row">
@@ -23,7 +26,7 @@
                                 <i class="fab fa-asymmetrik"></i> Login Admin
                             </div>
                             <p class="dfmn">Connectez-vous pour suivre les statistiques du marché</p>
-                            <form action="Load/ValidationLogin" method="post">
+                            <form action="Login/validationLogin" method="post">
                                 <div class="text-box-cont">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -38,7 +41,7 @@
                                         <input type="password" class="form-control" name="mdpAdmin" id="mdpAdmin" placeholder="Saisir le mot de passe" aria-describedby="basic-addon1">
                                     </div>
                                     <div class="input-group center">
-                                        <button class="btn btn-danger btn-round">Connexion</button>
+                                        <button class="btn btn-danger btn-round" id="submit">Connexion</button>
                                     </div>
 
                                     <div class="row">
@@ -88,7 +91,34 @@
 <script src="../../assets/js2/jquery-3.2.1.min.js"></script>
 <script src="../../assets/js2/popper.min.js"></script>
 <script src="../../assets/js2/bootstrap.min.js"></script>
-<script src="../../assets/js2/script.js"></script>
+<script src="../../assets/js2/script.js">
+$(document).ready(function(){
+    $("#submit").click(function(){
+        var user=$("#loginAdmin").val();
+        var mp=$("#mdpAdmin").val();
+    if (user==''||mp=='') {
+        jQuery("div#err").show();
+        jQuery("div#teny").html("Remplir les champs");
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>" + "Login/validationLogin",
+            data: {name: user, pwd: mp},
+            cache: false,
+            success: function(result){
+                if(result!=0){
+                    window.location.replace(result);
+                }else 
+                    jQuery("div#err").show();
+                    jQuery("div#teny").html("Echec de Login");
+            }
+        });
+    }
+    return false;
+    });
+});
+</script>
+
 
 
 </html>
