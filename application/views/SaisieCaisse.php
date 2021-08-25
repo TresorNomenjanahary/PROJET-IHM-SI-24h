@@ -1,7 +1,7 @@
 
           <div class="col-md-12">
 
-<form method="post" action="Valider_Commande">
+<form method="post" action="ValidationCommande">
   <p> <select name="produit">
         <?php for ($i=0; $i < count($liste_Produit) ; $i++) { ?>
          <option value="<?php echo $liste_Produit[$i]['idProduit']; ?>"><?php echo $liste_Produit[$i]['designation']; ?></option>                
