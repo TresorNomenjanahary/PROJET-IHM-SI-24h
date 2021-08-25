@@ -49,4 +49,32 @@ class Load extends Base_Controller {
 		$data['template'] = $page.'.php';
 		$this->load->view('template',$data);
 	}
+
+	public function SaisieCaisse(){
+
+		$this->load->model('Produit');
+		$this->load->model('Achat');
+		$caisse = $this->session->userdata('caisse');
+		$data['caisse'] = $caisse;
+		$data['liste_Produit'] = $this->Produit->get_All_Produit();
+		$data['liste_Achat'] = $this->Achat->getAchat($caisse);
+		$this->template('SaisieCaisse',$data);
+	}
+
+	public function ValidationCommande(){
+
+		$this->load->model('Achat');
+		$this->load->model('Produit');
+
+		$idProduit = $this->input->post('Produit');
+		$quantite = $this->input->post('quantite');
+		$caisse = $this->session->userdata('caisse');
+
+		$this->achat->insert_Achat($caisse,$idProduit,$quantite);
+
+		$data['caisse'] = $caisse;
+		$data['liste_Produit'] = $this->produit->get_All_Produit();
+		$data['liste_Achat'] = $this->achat->getAchat($caisse);
+		$this->template('saisie',$data);
+	}
 }
