@@ -23,7 +23,7 @@ create table Produit(
     codeProduit integer,
     prixUnitaire double,
     designation char(20),
-    image char(10),
+    image char(16),
     primary key(idProduit),
     foreign key(idCategorie) references Categorie(idCategorie)
 );
