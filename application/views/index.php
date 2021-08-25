@@ -151,29 +151,8 @@
     <!-- banner bg main end -->
     <!-- fashion section start -->
     
-    <div class="fashion_section">
         <?php include($templateFront);?>
-        <!-- <div id="main_slider" class="carousel slide" data-ride="carousel">
-            
-              s
-        </div> -->
-    </div>
-    <!-- fashion section end -->
-    <!-- electronic section start -->
-    <?php include($templateFront2);?>
-     <div class="fashion_section">
-       <!-- <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
-            
-        </div> -->
-    </div>  
-    <!-- electronic section end -->
-    <!-- jewellery  section start -->
-    <?php include($templateFront3);?>
-    <!-- <div class="jewellery_section">
         
-    </div> -->
-    <!-- jewellery  section end -->
-    <!-- footer section start -->
     <div class="footer_section layout_padding">
         <div class="container">
             <div class="footer_logo">
